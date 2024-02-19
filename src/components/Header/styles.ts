@@ -5,6 +5,10 @@ export const Container = styled.header`
   align-items: center;
   justify-content: space-between;
 
+  > svg {
+    color: ${({ theme }) => theme['green-500']};
+  }
+
   nav {
     display: flex;
     gap: 1rem;
