@@ -7,6 +7,16 @@ export const Countdown = styled.div`
   ${({ theme }) => theme['gray-100']};
 
   display: flex;
+
+  gap: 1rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+`
+
+export const NumberCard = styled.section`
+  display: flex;
   gap: 1rem;
 
   span {
@@ -15,9 +25,13 @@ export const Countdown = styled.div`
     border-radius: 8px;
   }
 `
-
 export const Separator = styled.div`
   padding: 2rem 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
 
   color: ${({ theme }) => theme['green-500']};
 
@@ -25,4 +39,11 @@ export const Separator = styled.div`
   overflow: hidden;
   display: flex;
   justify-content: center;
+
+  @media (max-width: 768px) {
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    padding: 1rem 0;
+  }
 `

@@ -16,7 +16,7 @@ const newCycleSchema = zod.object({
   minutesAmount: zod
     .number()
     .min(5, 'O ciclo precisa ser de no mínimo 5 minutos')
-    .max(60, 'O ciclo precisa ser de no máximo 60 minutos'),
+    .max(99, 'O ciclo precisa ser de no máximo 99 minutos'),
 })
 
 type TNewCycleFormData = zod.infer<typeof newCycleSchema>
@@ -50,12 +50,13 @@ export function Home() {
         </FormProvider>
         <Countdown />
 
-        {activeCycle ? (
+        {activeCycle && (
           <S.StopCountdownButton type="button" onClick={onInterruptCycle}>
             <HandPalm size={24} />
             Interromper
           </S.StopCountdownButton>
-        ) : (
+        )}
+        {!activeCycle && (
           <S.StartCountdownButton
             type="submit"
             disabled={isSubmitButtonDisabled}

@@ -4,6 +4,7 @@ import { differenceInSeconds } from 'date-fns'
 import { CyclesContext } from '../../../../contexts/CyclesContext'
 
 import * as S from './styles'
+import { Circle } from '@phosphor-icons/react'
 
 export function Countdown() {
   const {
@@ -57,11 +58,18 @@ export function Countdown() {
 
   return (
     <S.Countdown>
-      <span>{minutes[0]}</span>
-      <span>{minutes[1]}</span>
-      <S.Separator>:</S.Separator>
-      <span>{seconds[0]}</span>
-      <span>{seconds[1]}</span>
+      <S.NumberCard>
+        <span>{minutes[0]}</span>
+        <span>{minutes[1]}</span>
+      </S.NumberCard>
+      <S.Separator>
+        <Circle size={32} />
+        <Circle size={32} />
+      </S.Separator>
+      <S.NumberCard>
+        <span>{seconds[0]}</span>
+        <span>{seconds[1]}</span>
+      </S.NumberCard>
     </S.Countdown>
   )
 }

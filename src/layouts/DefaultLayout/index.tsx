@@ -5,8 +5,10 @@ import { Header } from '../../components/Header'
 export function DefaultLayout() {
   return (
     <S.Container>
-      <Header />
-      <Outlet />
+      <div className="card">
+        <Header />
+        <Outlet />
+      </div>
     </S.Container>
   )
 }
